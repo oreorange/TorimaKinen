@@ -13,3 +13,7 @@
  *= require_tree .
  *= require_self
  */
+// ブートストラップを読み込ませる記述
+@import "bootstrap";
+@import 'font-awesome-sprockets';
+@import 'font-awesome';
