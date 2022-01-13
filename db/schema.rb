@@ -10,7 +10,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_01_11_092302) do
+ActiveRecord::Schema.define(version: 2022_01_12_073352) do
+
+  create_table "anniversaries", force: :cascade do |t|
+    t.string "title"
+    t.string "anniv_image_id"
+    t.boolean "disp_flg"
+    t.datetime "start"
+    t.datetime "end"
+    t.string "allDay"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false

@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  title: MyString
+  anniv_image_id: MyString
+  disp_flg: false
+  start: 2022-01-12 07:33:52
+  end: 2022-01-12 07:33:52
+  allDay: MyString
+
+two:
+  title: MyString
+  anniv_image_id: MyString
+  disp_flg: false
+  start: 2022-01-12 07:33:52
+  end: 2022-01-12 07:33:52
+  allDay: MyString

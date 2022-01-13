@@ -10,6 +10,7 @@
 // Read Sprockets README (https://github.com/rails/sprockets#sprockets-directives) for details
 // about supported directives.
 //
+// ブートストラップ
 //= require jquery3
 //= require popper
 //= require bootstrap-sprockets
@@ -18,3 +19,8 @@
 //= require activestorage
 //= require turbolinks
 //= require_tree .
+
+// カレンダー
+// require jquery
+// require moment
+// require fullcalendar

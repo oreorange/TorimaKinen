@@ -71,3 +71,7 @@ gem 'devise-i18n-views'
 
 gem "refile", require: "refile/rails", github: 'manfe/refile'
 gem "refile-mini_magick"
+
+# カレンダー
+gem 'fullcalendar-rails'
+gem 'momentjs-rails'
