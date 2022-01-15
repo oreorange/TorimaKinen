@@ -24,3 +24,5 @@
 // require jquery
 //= require moment
 //= require fullcalendar
+// 日本語化
+//= require fullcalendar/lang/ja
