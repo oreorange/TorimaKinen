@@ -1,12 +1,13 @@
-class CreateAnniversaries < ActiveRecord::Migration[5.2]
+class CreateEvents < ActiveRecord::Migration[5.2]
   def change
-    create_table :anniversaries do |t|
+    create_table :events do |t|
       t.string :title
-      t.string :anniv_image_id
+      t.text :body
       t.boolean :disp_flg
       t.datetime :start
       t.datetime :end
       t.string :allDay
+      t.integer :user_id
 
       t.timestamps
     end

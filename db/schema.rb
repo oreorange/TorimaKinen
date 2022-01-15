@@ -10,8 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_01_12_073352) do
-
+ActiveRecord::Schema.define(version: 2022_01_15_034610) do
   create_table "anniversaries", force: :cascade do |t|
     t.string "title"
     t.string "anniv_image_id"
@@ -19,6 +18,18 @@ ActiveRecord::Schema.define(version: 2022_01_12_073352) do
     t.datetime "start"
     t.datetime "end"
     t.string "allDay"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "events", force: :cascade do |t|
+    t.string "title"
+    t.text "body"
+    t.boolean "disp_flg"
+    t.datetime "start"
+    t.datetime "end"
+    t.string "allDay"
+    t.integer "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

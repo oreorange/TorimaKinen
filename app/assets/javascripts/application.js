@@ -20,7 +20,7 @@
 //= require turbolinks
 //= require_tree .
 
-// カレンダー
+// カレンダー jquery重複？
 // require jquery
-// require moment
-// require fullcalendar
+//= require moment
+//= require fullcalendar

@@ -2,16 +2,16 @@
 
 one:
   title: MyString
-  anniv_image_id: MyString
+  body: MyText
   disp_flg: false
-  start: 2022-01-12 07:33:52
-  end: 2022-01-12 07:33:52
+  start: 2022-01-15 03:46:10
+  end: 2022-01-15 03:46:10
   allDay: MyString
 
 two:
   title: MyString
-  anniv_image_id: MyString
+  body: MyText
   disp_flg: false
-  start: 2022-01-12 07:33:52
-  end: 2022-01-12 07:33:52
+  start: 2022-01-15 03:46:10
+  end: 2022-01-15 03:46:10
   allDay: MyString
