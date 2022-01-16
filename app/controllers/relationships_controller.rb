@@ -2,14 +2,17 @@ class RelationshipsController < ApplicationController
   before_action :authenticate_user!
   def create
     current_user.follow(params[:user_id])
-    redirect_to request.referer
+    # js.erbに渡すuser.id
+    @user = User.find(params[:user_id])
+    # redirect_to request.referer 非同期化のため消す
   end
+  
   def destroy
     current_user.unfollow(params[:user_id])
-    redirect_to request.referer
+    @user = User.find(params[:user_id])
+    # redirect_to request.referer 非同期化のため消す
   end
-  # followings, followersは省略
-  
+
   def followings
      user = User.find(params[:user_id])
      @users = user.followings
@@ -19,5 +22,5 @@ class RelationshipsController < ApplicationController
      user = User.find(params[:user_id])
      @users = user.followers
   end
-  
+
 end
