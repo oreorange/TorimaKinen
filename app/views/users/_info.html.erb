@@ -1,24 +1,33 @@
-<h4><%= user.name %></h>
-<h4>誕生日<%= user.birthday %></h4>
-
 <table class='table'>
+  
   <tr>
-  <th>follows:</th>
+    <th><%= user.name %></th>
     <th>
+    <% if current_user == user %>
+    <%= link_to "編集", edit_user_path(user), class: "btn btn-secondary" %>
+    <% else %>
+      <div id="follow_btn_<%= user.id %>">
+      <%= render 'relationships/follow', user: user %>
+      </div>
+    <% end %>
+    </th>
+  </tr>
+  <tr>
+    <th>誕生日</br><%= user.birthday %></th>
+  </tr>
+  
+  <tr>
+   <th>
       <%= link_to user_followings_path(user.id) do %>
-      <%= user.followings.count %>
+      <%= user.followings.count %>. フォロー中
       <% end %>
     </th>
   </tr>
   <tr>
-    <th>followers:</th>
     <th>
       <%= link_to user_followers_path(user.id) do %>
-      <%= user.followers.count %>
+      <%= user.followers.count %>. フォロワー
       <% end %>
     </th>
-    </tr>
-    <tr id="follow_btn_<%= user.id %>">
-    <%= render 'relationships/follow', user: current_user %>
-    </tr>
+  </tr>
 </table>
