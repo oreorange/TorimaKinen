@@ -1,6 +1,10 @@
-<div class='container'>
+<div class='container px-5 px-sm-0'>
   <div class='row'>
-    <div class='col-md-12'>
+    <div class='col-md-3'>
+      <h2>　　</h2>
+      <!--保留-->
+    </div>
+    <div class='col-md-8 offset-md-1'>
     <% if users.exists? %>
     <table class='table'>
       <thead>
@@ -14,7 +18,7 @@
         <tbody>
           <tr>
             <td>
-              <%= attachment_image_tag user, :image, :fill, 100, 100, format: 'jpeg' %>
+              <%= attachment_image_tag user, :image, :fill, 100, 100, format: 'jpeg', fallback: "no_image.jpg" %>
             </td>
             <td><%= user.name %></td>
             <td>フォロー中: <%= user.followings.count %></td>
@@ -27,6 +31,7 @@
     <% else %>
       <p>ユーザーはいません</p>
     <% end %>
+    </div>
     </div>
   </div>
 </div>

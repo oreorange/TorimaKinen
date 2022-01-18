@@ -1,9 +1,13 @@
 <div class='container px-5 px-sm-0'>
   <div class='row'>
     <div class='col-md-3'>
-      <h2>プロフ</h2>
+    <% if current_user == @user %>
+      <h2>マイページ</h2>
+    <% else %>
+      <!--サイドバー、分かりやすく-->
+      <h2>　</h2>
+    <% end %>
       <%= render 'info', user: @user %>
-      <h2 class="mt-3">New book</h2>
     </div>
     <div class='col-md-8 offset-md-1'>
 

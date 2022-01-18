@@ -1,8 +1,8 @@
 <table class='table'>
   <tr>
     <th>
-      <%= attachment_image_tag user, :image, :fill, 100, 100, format: 'jpeg' %></br>
-      <%= user.name %>
+      <%= attachment_image_tag user, :image, :fill, 100, 100, format: 'jpeg', fallback: "no_image.jpg" %></br>
+      <h4><%= user.name %><h4>
     </th>
   </tr>
   <tr>
