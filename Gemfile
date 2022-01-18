@@ -76,3 +76,5 @@ gem "refile-mini_magick"
 # カレンダー
 gem 'fullcalendar-rails'
 gem 'momentjs-rails'
+
+gem 'pry-byebug'

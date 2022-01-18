@@ -1,1 +1,20 @@
+
 $("#follow_btn_" + <%= @user.id %>).html("<%= j(render 'relationships/follow', user: @user) %>");
+
+<!--非同期通信でのフォロー数カウント用、_info.htmlでユーザー名を特定-->
+//$("#following_count_" + <%= @user.id %>).html('<%= j(render 'relationships/following', user: @user) %>');
+//$("#follower_count_" + <%= @user.id %>).html('<%= j(render 'relationships/follower', user: @user) %>');
+var user_id = $('#user_id').attr('data-id')
+$.ajax({
+　url: '/users/' + user_id +'/follower_counts', //アクセスするURLかディレクトリ
+　type: 'get',
+　cache: false, //cacheを使うかどうか
+　dataType:'script', //data type scriptなどデータタイプの指定
+　})
+　.done(function(response) { //通信が成功したときのコールバックの処理を書く
+
+　})
+　.fail(function(xhr) { //通信が失敗したときのコールバックの処理を書く
+　})
+　.always(function(xhr, msg) { //通信結果にかかわらず実行する処理を書く
+});

@@ -6,8 +6,10 @@ Rails.application.routes.draw do
     resource :relationships, only: [:create, :destroy]
     get 'followings' => 'relationships#followings', as: 'followings'
     get 'followers' => 'relationships#followers', as: 'followers'
+    # フォロー数、非同期通信のために作成
+    get 'follower_counts' => 'relationships#follower_counts'
   end
-  
+
   resources :events
   root 'homes#top'
 end

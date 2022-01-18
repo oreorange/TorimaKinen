@@ -1,0 +1,4 @@
+<%# binding.pry %>
+<%= link_to user_followings_path(user.id) do %>
+  <%= user.followings.count %>. フォロー中
+<% end %>

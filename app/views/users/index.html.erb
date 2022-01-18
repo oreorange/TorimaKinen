@@ -14,7 +14,6 @@
                 <%= attachment_image_tag user, :image, :fill, 100, 100, format: 'jpeg' %>
               </div>
               <%= user.name %>
-              <%= user.birthday %>
               <div id="follow_btn_<%= user.id %>">
               <%= render 'relationships/follow', user: user %>
               </div>
