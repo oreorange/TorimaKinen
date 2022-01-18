@@ -10,6 +10,9 @@
         <div class='table'>
           <% if user_signed_in? %>
             <% @users.each do |user| %>
+              <div>
+                <%= attachment_image_tag user, :image, :fill, 100, 100, format: 'jpeg' %>
+              </div>
               <%= user.name %>
               <%= user.birthday %>
               <div id="follow_btn_<%= user.id %>">

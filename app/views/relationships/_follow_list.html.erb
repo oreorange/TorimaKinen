@@ -13,7 +13,9 @@
       <% users.each do |user| %>
         <tbody>
           <tr>
-            <td>プロフ画像</td>
+            <td>
+              <%= attachment_image_tag user, :image, :fill, 100, 100, format: 'jpeg' %>
+            </td>
             <td><%= user.name %></td>
             <td>フォロー中: <%= user.followings.count %></td>
             <td>フォロワー: <%= user.followers.count %></td>

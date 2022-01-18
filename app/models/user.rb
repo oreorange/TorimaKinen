@@ -31,5 +31,6 @@ class User < ApplicationRecord
     followings.include?(user)
   end
 
+  attachment :image
   
 end
