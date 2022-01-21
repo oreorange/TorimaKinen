@@ -17,7 +17,7 @@
             <td>
               <%= attachment_image_tag user, :image, :fill, 100, 100, format: 'jpeg', fallback: "no_image.jpg" %>
             </td>
-            <td><%= user.name %></td>
+            <td><%= link_to user.name, user_path(user), class: "user_#{user.id}" %></td>
             <td id="follow_btn_<%= user.id %>">
               <%= render 'relationships/follow', user: user %>
             </td>
