@@ -10,7 +10,7 @@
                         <%= form_with(model: event, url: event_path(event), method: :put) do |f| %>
                             <p>
                                 <span>タイトル</span>
-                                <span id="inputTitle" value=""><%= f.text_field :title, class: "form-control", placeholder: "タイトルを入力してください" %></span>
+                                <span id="inputTitle" value=""><%= f.text_field :title, class: "form-control", placeholder: "変更内容" %></span>
                             </p>
                             <span>開始日時</span>
                             <span><%= f.date_field  :start, placeholder: "XXXX-XX-XX", class:"field" %> ~ </span><br>
