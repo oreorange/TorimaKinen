@@ -5,23 +5,23 @@
         <div class="modal-dialog modal-nm">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h4 class="modal-title">スケジュール編集</h4>
+                    <h4 class="modal-title">記念日を編集</h4>
                 </div>
                 <div class="modal-body">
-                    <div  class="col">
+                    <div class="col">
                         <%= form_with(model: event, url: event_path(event), method: :put) do |f| %>
-                            <p>
-                                <span>タイトル</span>
-                                <span id="inputTitle" value=""><%= f.text_field :title, class: "form-control", placeholder: "変更内容" %></span>
-                            </p>
+                            <span>タイトル</span>
+                            <span id="inputTitle" value=""><%= f.text_field :title, class: "form-control", placeholder: "変更内容" %></span>
                             <span>開始日時</span>
                             <span><%= f.date_field  :start, placeholder: "XXXX-XX-XX", class:"field" %> ~ </span><br>
                             <span>終了日時</span>
-                            <span><%= f.date_field  :end, placeholder: "XXXX-XX-XX", class:"field" %></span>
-                            <span><br>
-                                詳細
-                                <%= f.text_field :body, class: "form-control", placeholder: "タイトルの詳細を記入してください" %>
+                            <span><%= f.date_field  :end, placeholder: "XXXX-XX-XX", class:"field" %></span><br>
+                            <span>詳細</span>
+                            <span>
+                                <%= f.text_field :body, class: "form-control", placeholder: "タイトルの詳細を記入" %>
                             </span>
+                            <span><%= f.attachment_field :day_image, class: "form-control-file day_image" %></span>
+                            <%= attachment_image_tag event, :day_image, :fill, 400, 400, format: 'jpeg' %>
                             <div class="modal-footer">
                                 <%= f.hidden_field :user_id, :value => current_user.id %>
                                 <%= f.submit "編集する", class: "btn btn-primary" %>
@@ -40,12 +40,13 @@
         <div class="modal-dialog modal-nm">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h4 class="modal-title">スケジュール詳細</h4>
+                    <h4 class="modal-title">記念日詳細</h4>
                 </div>
                 <div class="modal-body">
                     <div  class="col">
-                          <%= event.title %></br>
-                          <%= event.body %>
+                          <h3>・<%= event.title %><h3></br>
+                          <h4><%= event.body %></h4>
+                          <%= attachment_image_tag event, :day_image, :fill, 400, 400, format: 'jpeg' %>
                     </div>
                 </div>
             </div>
