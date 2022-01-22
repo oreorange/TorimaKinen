@@ -1,4 +1,6 @@
 <% events.each do |event| %>
+    <!--自分の予定だった場合-->
+  <% if event.user_id == current_user.id %>
     <div id='inputScheduleEditForm<%= event.id %>' class="modal fade" tabindex="-1">
         <div class="modal-dialog modal-nm">
             <div class="modal-content">
@@ -31,4 +33,24 @@
             </div>
         </div>
     </div>
+    <!--自分の予定だった場合-->
+    <% else %>
+    <!--自分以外の予定だった場合-->
+    <div id='inputScheduleEditForm<%= event.id %>' class="modal fade" tabindex="-1">
+        <div class="modal-dialog modal-nm">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title">スケジュール詳細</h4>
+                </div>
+                <div class="modal-body">
+                    <div  class="col">
+                          <%= event.title %></br>
+                          <%= event.body %>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--自分以外の予定だった場合-->
+    <% end %>
 <% end %>
