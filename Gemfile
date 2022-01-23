@@ -40,6 +40,9 @@ group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
   gem 'pry-rails'
+    
+  # Puma自動起動設定のため、ここに移動
+  gem 'pry-byebug'
 end
 
 group :development do
@@ -76,8 +79,6 @@ gem "refile-mini_magick"
 # カレンダー
 gem 'fullcalendar-rails'
 gem 'momentjs-rails'
-
-gem 'pry-byebug'
 
 gem 'dotenv-rails'
 group :production do
