@@ -12,14 +12,16 @@ class EventsController < ApplicationController
   end
 
   def destroy
-      @user = User.find(params[:id])
       event = Event.find(params[:id])
       event.destroy
-      redirect_to user_path(@user)
+      redirect_to user_path(current_user)
   end
 
   private
   def event_params
-      params.require(:event).permit(:title, :start, :end, :user_id, :body, :day_image)
+      data = params.require(:event).permit(:title, :start, :end, :user_id, :body, :day_image)
+      # カレンダー表記のため、変数を使いendの終了時間を定義、デフォルトで00：00
+      data[:end] = data[:end] + " 23:59:59"
+      return data
   end
 end

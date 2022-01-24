@@ -6,6 +6,7 @@
             <div class="modal-content">
                 <div class="modal-header">
                     <h4 class="modal-title">記念日を編集</h4>
+                    <%= link_to '削除', event_path(event.id), method: :delete %>
                 </div>
                 <div class="modal-body">
                     <div class="col">
