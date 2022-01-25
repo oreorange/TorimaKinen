@@ -1,5 +1,11 @@
 class Event < ApplicationRecord
   belongs_to :user
+  has_many :favorites, dependent: :destroy
+  # ユーザーがいいねしているかどうか判断、存在（exists?）
+  def favorited_by?(user)
+    favorites.where(user_id: user.id).exists?
+  end
+  
   attachment :day_image
   
   # 検索のためのメソッド定義

@@ -10,7 +10,10 @@ Rails.application.routes.draw do
     get 'follower_counts' => 'relationships#follower_counts'
   end
 
-  resources :events
+  resources :events do
+    resource :favorites,only: [:create, :destroy]
+  end
+  
   root 'homes#top'
   get 'homes/support'
   # 検索機能
