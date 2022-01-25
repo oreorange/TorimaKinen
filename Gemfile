@@ -85,3 +85,6 @@ group :production do
   gem 'mysql2'
 end
 
+# コードチェック require:falseをつけてアプリで読み込まないように
+gem 'rubocop', require:false
+gem 'rubocop-rails', require:false
