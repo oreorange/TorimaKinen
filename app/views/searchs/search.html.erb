@@ -1,0 +1,30 @@
+<% if @model == 'user' %>
+	<h3>ユーザー検索結果 "<%= @content %>"</h3>
+  <%= render 'users/index', users: @records %>
+<% elsif @model == 'event' %>
+	<h3>記念日検索結果 "<%= @content %>"</h3>
+	<table class='table'>
+    <tr>
+      <th>画像</th>
+      <th>タイトル</th>
+      <th>詳細</th>
+      <th colspan="3">名前</th>
+    </tr>
+    <% @records.each do |event| %>
+    <tr>
+      <td>
+        <%= attachment_image_tag event, :day_image, :fill, 100, 100, format: 'jpeg' %>
+      </td>
+      <td>
+        <%= event.title %>
+      </td>
+      <td>
+        <%= event.body %>
+      </td>
+      <td>
+        <%= link_to event.user.name, user_path(event.user.id) %>
+      </td>
+    </tr>
+    <% end %>
+  </table>
+<% end %>

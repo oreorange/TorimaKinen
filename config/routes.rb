@@ -13,4 +13,6 @@ Rails.application.routes.draw do
   resources :events
   root 'homes#top'
   get 'homes/support'
+  # 検索機能
+  get '/search', to: 'searchs#search'
 end
