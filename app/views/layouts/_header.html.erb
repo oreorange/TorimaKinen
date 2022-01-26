@@ -20,6 +20,8 @@
     </div>
   </nav>
   <div class="text-right search">
-    <%= render 'searchs/search' %>
+    <% if user_signed_in? %>
+     <%= render 'searchs/search' %>
+    <% end %>
   </div>
 </header>
