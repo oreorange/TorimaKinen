@@ -3,7 +3,6 @@ class User < ApplicationRecord
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
-         
 
   has_many :events, dependent: :destroy
   has_many :favorites, dependent: :destroy
@@ -22,21 +21,21 @@ class User < ApplicationRecord
     relationships.create(followed_id: user_id)
   end
 
-  #フォローを外す時の処理
+  # フォローを外す時の処理
   def unfollow(user_id)
     relationships.find_by(followed_id: user_id).destroy
   end
 
-  #フォローしているか判定
+  # フォローしているか判定
   def following?(user)
     followings.include?(user)
   end
 
   attachment :image
   
-  validates :name, length: {maximum: 20, minimum: 2}
+  validates :name, length: { maximum: 20, minimum: 2}
   validates :email, uniqueness: true
-  validates :introduction,  length: {maximum: 50 }
+  validates :introduction,  length: { maximum: 50 }
   
   # 検索のためのメソッド定義
   def self.search_for(content, method)

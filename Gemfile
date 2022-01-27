@@ -40,7 +40,7 @@ group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
   gem 'pry-rails'
-    
+  
   # Puma自動起動設定のため、ここに移動
   gem 'pry-byebug'
 end
@@ -52,6 +52,9 @@ group :development do
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
+
+  # 静的コード解析ツール
+  gem 'rubocop-airbnb'
 end
 
 group :test do
@@ -85,6 +88,7 @@ group :production do
   gem 'mysql2'
 end
 
-# コードチェック require:falseをつけてアプリで読み込まないように
-gem 'rubocop', require:false
-gem 'rubocop-rails', require:false
+# コードチェック用gem, require:falseをつけてアプリで読み込まないようにする
+# development内に追加
+# gem 'rubocop', require:false
+# gem 'rubocop-rails', require:false
