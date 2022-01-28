@@ -2,6 +2,13 @@
 
 require 'rails_helper'
 
+RSpec.describe 'event新規登録', type: :system do
+  # テスト用データを読み込む
+  before do
+    @event = FactoryBot.build(:event)
+    @user = FactoryBot.create(:user)
+  end
+
 describe '投稿のテスト' do
   let!(:event) { create(:event,title:'hoge',body:'body')}
   describe 'マイページのテスト' do
@@ -16,6 +23,7 @@ describe '投稿のテスト' do
   end
 end
 
+end
 # expect().to　の部分はエクスぺテーションと呼ばれる,()内の値が期待値となるように,という意味がある
 # be_valid　の部分はマッチャーと呼ばれ様々な種類がある
 # be_valid　は値が有効であるかを判断するマッチャー
