@@ -3,9 +3,10 @@
 require 'rails_helper'
 
 RSpec.describe Event, "モデルに関するテスト", type: :model do
+  let(:user) { FactoryBot.create(:user) }
   describe '実際に保存してみる' do
     it "有効な投稿内容の場合は保存されるか" do
-      expect(FactoryBot.build(:event)).to be_valid
+      expect(FactoryBot.build(:event, user_id: user.id)).to be_valid
     end
   end
 end
