@@ -8,6 +8,10 @@ class Event < ApplicationRecord
   
   attachment :day_image
   
+validates :title, length: { maximum: 50, minimum: 1}
+validates :start, presence: true
+validates :end, presence: true
+
   # 検索のためのメソッド定義
   def self.search_for(content, method)
     if method == 'perfect'
