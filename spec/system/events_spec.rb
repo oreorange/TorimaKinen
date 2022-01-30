@@ -7,7 +7,7 @@ require 'rails_helper'
 #   before do
 #     @event = FactoryBot.build(:event)
 #     @user = FactoryBot.create(:user)
-#   end　　13.14行目の記述があるので、必要なし
+#   end. 13.14行目の記述があるので、必要なし。
 
 describe '投稿のテスト' do
   let!(:event) { create(:event, user_id: user.id, title:'hoge',body:'body')}
