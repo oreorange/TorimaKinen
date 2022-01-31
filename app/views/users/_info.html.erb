@@ -1,35 +1,44 @@
-<table class='table'>
-  <tr>
-    <th>
-      <%= attachment_image_tag user, :image, :fill, 100, 100, format: 'jpeg', fallback: "no_image.jpg" %></br>
-      <h4><%= user.name %><h4>
-      <h6><%= user.introduction %></h6>
-    </th>
-  </tr>
-  <tr>
-    <!--フォロ数非同期のための記述、user_idをdate_idとして記録することでuserを特定-->
-    <th id="user_id" data-id="<%= user.id %>">
-      <% if current_user == user %>
-        <%= link_to " 編集 ", edit_user_path(user), class: "btn btn-secondary" %>
-      <% else %>
-        <!--非同期通信のためにid付与-->
-        <div id="follow_btn_<%= user.id %>">
-          <%= render 'relationships/follow', user: user %>
-        </div>
-      <% end %>
-    </th>
-  </tr>
-  <tr>
-    <th>誕生日</br><%= user.birthday %></th>
-  </tr>
-  <tr>
-   <th id="following_count_<%= user.id %>">
-      <%= render 'relationships/following', user: user %>
-    </th>
-  </tr>
-  <tr>
-    <th id="follower_count_<%= user.id %>">
-      <%= render 'relationships/follower', user: user %>
-    </th>
-  </tr>
-</table>
+<div class='row'>
+  <div class='col-6 col-sm-6 col-md-12'>
+    <table class='table'>
+      <tr>
+        <th>
+          <%= attachment_image_tag user, :image, :fill, 100, 100, format: 'jpeg', fallback: "no_image.jpg" %></br>
+          <h4><%= user.name %><h4>
+          <h6><%= user.introduction %></h6>
+        </th>
+      </tr>
+    </table>
+  </div>
+  
+  <div class='col-6 col-sm-6 col-md-12'>
+    <table class='table'>
+      <tr>
+        <!--フォロ数非同期のための記述、user_idをdate_idとして記録することでuserを特定-->
+        <th id="user_id" data-id="<%= user.id %>">
+          <% if current_user == user %>
+            <%= link_to " 編集 ", edit_user_path(user), class: "btn btn-secondary" %>
+          <% else %>
+            <!--非同期通信のためにid付与-->
+            <div id="follow_btn_<%= user.id %>">
+              <%= render 'relationships/follow', user: user %>
+            </div>
+          <% end %>
+        </th>
+      </tr>
+      <tr>
+        <th>誕生日</br><%= user.birthday %></th>
+      </tr>
+      <tr>
+       <th id="following_count_<%= user.id %>">
+          <%= render 'relationships/following', user: user %>
+        </th>
+      </tr>
+      <tr>
+        <th id="follower_count_<%= user.id %>">
+          <%= render 'relationships/follower', user: user %>
+        </th>
+      </tr>
+    </table>
+  </div>
+</div>
