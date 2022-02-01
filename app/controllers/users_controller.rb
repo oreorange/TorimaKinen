@@ -3,6 +3,8 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
     @events = Event.where(user_id: @user.id)
     @event = Event.new
+    # おすすめ記念日ランダム表示
+    @random = Event.order("RANDOM()").limit(7)
     # binding.pry
   end
   
