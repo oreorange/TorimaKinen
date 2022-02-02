@@ -1,18 +1,12 @@
-<%= image_tag 'top_coffee2.jpg', class: 'top_image' %>
-<div class='container'>
-  <div class='row'>
-    <div class="text-center">
-      
-    </div>
-    <div class="mx-auto">
-      <h1>
-        <%= link_to new_user_registration_path, class: "btn btn-outline-dark btn-lg" do %>
-          <i class="fas fa-user-plus"> 新規登録</i>
-        <% end %>
-        <%= link_to new_user_session_path, class: "btn btn-outline-dark btn-lg" do %>
-          <i class="fas fa-sign-in-alt"> ログイン</i>
-        <% end %>
-      </h1>
+<div class='jumbotron'>
+  <div class='container'>
+    <div class='d-flex align-items-center' style="height:300px;">
+      <%= link_to new_user_registration_path, class: "btn btn-outline-dark btn-lg" do %>
+        <i class="fas fa-user-plus"> 新規登録</i>
+      <% end %> 
+      <%= link_to new_user_session_path, class: "btn btn-outline-dark btn-lg" do %>
+        <i class="fas fa-sign-in-alt"> ログイン</i>
+      <% end %>
     </div>
   </div>
 </div>
