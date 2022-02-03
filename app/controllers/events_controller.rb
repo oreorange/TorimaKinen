@@ -3,6 +3,12 @@ class EventsController < ApplicationController
     event = Event.new(event_params)
     event.save!
     @events = Event.where(user_id: current_user.id)
+    # vision api使用
+    tags = Vision.get_image_data(event.day_image)    
+    tags.each do |tag|
+      event.tags.create(name: tag)
+    end
+    
   end
 
   def update
