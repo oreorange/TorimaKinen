@@ -15,6 +15,12 @@ class EventsController < ApplicationController
     event = Event.find(params[:id])
     @events = Event.where(user_id: current_user.id)
     event.update(event_params)
+    # vision api使用
+    tags = Vision.get_image_data(event.day_image)    
+    tags.each do |tag|
+      event.tags.create(name: tag)
+    end
+    
   end
 
   def destroy

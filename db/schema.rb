@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_01_25_183943) do
+ActiveRecord::Schema.define(version: 2022_02_04_050144) do
 
   create_table "anniversaries", force: :cascade do |t|
     t.string "title"
@@ -46,6 +46,13 @@ ActiveRecord::Schema.define(version: 2022_01_25_183943) do
   create_table "relationships", force: :cascade do |t|
     t.integer "follower_id"
     t.integer "followed_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "tags", force: :cascade do |t|
+    t.string "name"
+    t.integer "event_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
