@@ -33,3 +33,5 @@
 ; gitに上げないための記述
 /.env
 
+; ここに入ってる画像をcommitしない
+/public/uploads
