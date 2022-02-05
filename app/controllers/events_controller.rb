@@ -1,6 +1,8 @@
 class EventsController < ApplicationController
   def create
     event = Event.new(event_params)
+    # Natural Languat API使用
+    event.score = Language.get_data(event_params[:title])  #この行を追加
     event.save!
     @events = Event.where(user_id: current_user.id)
     # vision api使用

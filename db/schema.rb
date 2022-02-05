@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_02_04_050144) do
+ActiveRecord::Schema.define(version: 2022_02_05_060935) do
 
   create_table "anniversaries", force: :cascade do |t|
     t.string "title"
@@ -34,6 +34,7 @@ ActiveRecord::Schema.define(version: 2022_02_04_050144) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "day_image_id"
+    t.decimal "score", precision: 5, scale: 3
   end
 
   create_table "favorites", force: :cascade do |t|

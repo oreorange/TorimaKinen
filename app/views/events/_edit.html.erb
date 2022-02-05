@@ -16,6 +16,7 @@
                         <%= form_with(model: event, url: event_path(event), method: :put) do |f| %>
                             <span>タイトル</span>
                             <span id="inputTitle" value=""><%= f.text_field :title, class: "form-control", placeholder: "変更内容" %></span>
+                            <span class="sentiment-score">タイトルの感情分析スコア<%= event.score %></span><br>
                             <span>開始日時</span>
                             <span><%= f.date_field  :start, placeholder: "XXXX-XX-XX", class:"field" %> ~ </span><br>
                             <span>終了日時</span>
