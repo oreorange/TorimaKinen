@@ -1,7 +1,7 @@
 require 'base64'
 require 'json'
 require 'net/https'
-
+ぎ
 module Language
   class << self
     def get_data(text)
