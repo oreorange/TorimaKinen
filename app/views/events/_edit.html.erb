@@ -9,7 +9,7 @@
                     <div id="favorite_buttons_<%= event.id %>">
                       <%= render 'favorites/favorite',event: event %>
                     </div>
-                    <%= link_to '削除', event_path(event.id), method: :delete %>
+                    <%= link_to '削除', event_path(event.id), method: :delete, data: { confirm: '本当に削除しますか？' } %>
                 </div>
                 <div class="modal-body">
                     <div class="col">
