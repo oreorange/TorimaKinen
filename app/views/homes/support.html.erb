@@ -5,6 +5,9 @@
     ちょっと特別なことから、どうでもいいことまで、</br>
     とりあえず共有してみると、小さなことでも毎日を楽しく過ごせるかも！？</br>
   </h3>
+  <% if user_signed_in? %>
+    <%= link_to ' お問い合わせ', new_contact_path, class: 'far fa-envelope btn btn-outline-dark btn-lg'%>
+  <% end %>
   <h2><i class="fab fa-pagelines fa-5x"></i></h2>
 </div>
 

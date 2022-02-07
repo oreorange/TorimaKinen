@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_02_05_060935) do
+ActiveRecord::Schema.define(version: 2022_02_07_161121) do
 
   create_table "anniversaries", force: :cascade do |t|
     t.string "title"
@@ -19,6 +19,14 @@ ActiveRecord::Schema.define(version: 2022_02_05_060935) do
     t.datetime "start"
     t.datetime "end"
     t.string "allDay"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "contacts", force: :cascade do |t|
+    t.string "name", null: false
+    t.string "email", null: false
+    t.text "message", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

@@ -18,4 +18,6 @@ Rails.application.routes.draw do
   get 'homes/support'
   # 検索機能
   get '/search', to: 'searchs#search'
+  # 問い合わせ機能
+  resources :contacts, only: [:new, :create]
 end
