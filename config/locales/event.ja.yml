@@ -1,0 +1,10 @@
+ja:
+  activerecord:
+    models:
+      event:
+    attributes:
+      event:
+        title: タイトル
+        start: 開始日
+        end: 終了日
+        

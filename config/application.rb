@@ -13,6 +13,8 @@ module TorimaKinen
     config.paths.add 'lib', eager_load: true # vision api 使用に自作のライブラリを読み込むための記述
     #日本語化適用のための記述
     config.i18n.default_locale = :ja
+    # event投稿　エラーメッセージ日本語化
+    config.i18n.load_path += Dir[Rails.root.join('config', 'locales', 'event.ja.yml').to_s]
 
     # Settings in config/environments/* take precedence over those specified here.
     # Application configuration can go into files in config/initializers

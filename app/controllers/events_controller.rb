@@ -1,10 +1,28 @@
 class EventsController < ApplicationController
   def create
-    event = Event.new(event_params)
+    @event = Event.new(event_params)
     # Natural Languat API使用
-    event.score = Language.get_data(event_params[:title])  #この行を追加
-    event.save!
+    @event.score = Language.get_data(event_params[:title])  #この行を追加
+    unless @event.save
+      render 'events/error'
+    end
     @events = Event.where(user_id: current_user.id)
+    # vision api使用 画像がない場合はタグを作らない表示しない
+    if @event.day_image
+      tags = Vision.get_image_data(@event.day_image)
+    else
+      tags = []
+    end
+    tags.each do |tag|
+      @event.tags.create(name: tag)
+    end
+
+  end
+
+  def update
+    event = Event.find(params[:id])
+    @events = Event.where(user_id: current_user.id)
+    event.update(event_params)
     # vision api使用 画像がない場合はタグを作らない表示しない
     if event.day_image
       tags = Vision.get_image_data(event.day_image)
@@ -14,23 +32,7 @@ class EventsController < ApplicationController
     tags.each do |tag|
       event.tags.create(name: tag)
     end
-    
-  end
 
-  def update
-    event = Event.find(params[:id])
-    @events = Event.where(user_id: current_user.id)
-    event.update(event_params)
-    # vision api使用 画像がない場合はタグを作らない表示しない
-    if event.day_image
-      tags = Vision.get_image_data(event.day_image)    
-    else
-      tags = []
-    end
-    tags.each do |tag|
-      event.tags.create(name: tag)
-    end
-    
   end
 
   def destroy

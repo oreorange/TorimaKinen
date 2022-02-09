@@ -44,6 +44,9 @@
                     </div>
                     <div class="modal-body">
                         <%= form_with model: @event, url: events_path do |f| %>
+                            <div id="event_error">
+                            <!--エラーメッセージは通常時非表示なので、renderで呼び出さなくても良い-->
+                            </div>
                             <div  class="col">
                                 <span>タイトル</span>
                                 <span><%= f.text_field :title, class: "form-control", placeholder: "〇〇の日、〇〇記念" %></span>
