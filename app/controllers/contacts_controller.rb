@@ -7,7 +7,7 @@ class ContactsController < ApplicationController
     @contact = Contact.new(contact_params)
     if @contact.save
       ContactMailer.send_mail(@contact).deliver_now
-      redirect_to homes_support_path
+      redirect_to homes_support_path, notice: 'お問い合わせ ありがとうございます。'
     else
       render :new
     end

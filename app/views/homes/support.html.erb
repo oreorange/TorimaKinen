@@ -1,4 +1,5 @@
 <div style="text-align: center" >
+  <h4 class='mt-5'><%= notice %></h4>
   <h1>　</h1>
   <h3>
     良いことあった日、初めての経験をした日などを記念日として登録してみましょう！</br>
@@ -6,7 +7,7 @@
     とりあえず共有してみると、小さなことでも毎日を楽しく過ごせるかも！？</br>
   </h3>
   <p>
-    カレンダーの日付枠内を、クリックすることで記念日を登録できます。
+    カレンダーの日付枠内をクリックすることで、記念日を登録できます。
   </p>
   <% if user_signed_in? %>
     <%= link_to ' お問い合わせ', new_contact_path, class: 'far fa-envelope btn btn-outline-dark btn-lg'%>

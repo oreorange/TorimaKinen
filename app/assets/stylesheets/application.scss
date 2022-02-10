@@ -22,13 +22,17 @@
   background:url(book.jpg) center no-repeat;
   background-size: cover;
   background-position: center center;
-  height:700px;
+  height:900px;
   margin-bottom:0;
 }
 
 footer {
   background: #343a40;
   color: #ffffff;
+  // fotterを固定する
+  position: fixed;
+  width: 100%;
+  bottom: 0;
 }
 
 body {
