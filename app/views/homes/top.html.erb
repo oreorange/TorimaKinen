@@ -9,8 +9,10 @@
       <% end %>
     </div>
     <div>
+      <% unless user_signed_in? %>
       <!--ゲストユーザーログイン-->
-      <%= link_to 'ゲストログイン（閲覧用）', users_guest_sign_in_path, class: "btn btn-outline-dark btn-lg sign_in", method: :post %>
+        <%= link_to 'ゲストログイン（閲覧用）', users_guest_sign_in_path, class: "btn btn-outline-dark btn-lg sign_in", method: :post %>
+      <% end %>
     </div>
   </div>
 </div>
