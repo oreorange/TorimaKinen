@@ -8,5 +8,9 @@
         <i class="fas fa-sign-in-alt"> ログイン</i>
       <% end %>
     </div>
+    <div>
+      <!--ゲストユーザーログイン-->
+      <%= link_to 'ゲストログイン（閲覧用）', users_guest_sign_in_path, class: "btn btn-outline-dark btn-lg sign_in", method: :post %>
+    </div>
   </div>
 </div>

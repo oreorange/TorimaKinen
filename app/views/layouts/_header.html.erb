@@ -7,6 +7,7 @@
       </button>
       <div class="collapse navbar-collapse" id="navbarNavDropdown">
         <ul class="navbar-nav ml-auto">
+          <h4 class='text-success'><%= notice %></h4>
         <% if user_signed_in? %>
           <li><%= link_to ' マイページ',user_path(current_user),class: 'fas fa-house-user nav-link text-light' %></li>
           <li><%= link_to ' ユーザー', users_path,class: 'fas fa-users nav-link text-light' %></li>

@@ -17,7 +17,12 @@
         <!--フォロ数非同期のための記述、user_idをdate_idとして記録することでuserを特定-->
         <th id="user_id" data-id="<%= user.id %>">
           <% if current_user == user %>
-            <%= link_to " 編集 ", edit_user_path(user), class: "btn btn-secondary" %>
+            <!--ゲストユーザーの場合、編集画面を表示しない-->
+            <% if user.name == "ゲストユーザー" %>
+              編集orフォロー
+            <% else %>
+              <%= link_to " 編集 ", edit_user_path(user), class: "btn btn-secondary" %>
+            <% end %>
           <% else %>
             <!--非同期通信のためにid付与-->
             <div id="follow_btn_<%= user.id %>">

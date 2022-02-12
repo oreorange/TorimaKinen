@@ -50,4 +50,14 @@ class User < ApplicationRecord
     end
   end
   
+  # ゲストユーザー登録
+  def self.guest
+    find_or_create_by!(name: 'ゲストユーザー' ,email: 'guest@example.com') do |user|
+      user.password = SecureRandom.urlsafe_base64
+      user.name = "ゲストユーザー"
+      user.birthday = "2000-02-22"
+      user.introduction = "日付枠内をクリックすることで、投稿が行えます。"
+    end
+  end
+  
 end

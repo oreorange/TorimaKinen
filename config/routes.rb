@@ -20,4 +20,9 @@ Rails.application.routes.draw do
   get '/search', to: 'searchs#search'
   # 問い合わせ機能
   resources :contacts, only: [:new, :create]
+  # ゲストログイン
+  devise_scope :user do
+    post 'users/guest_sign_in', to: 'users/sessions#guest_sign_in'
+  end
+  
 end
