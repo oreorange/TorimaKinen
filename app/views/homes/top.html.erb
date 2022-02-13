@@ -9,9 +9,11 @@
       <% end %>
     </div>
     <div>
-      <!--ゲストユーザーログイン/ログイン時非表示-->
+      <!--ゲストユーザーログイン/ログイン中は発火しない-->
       <% unless user_signed_in? %>
         <%= link_to 'ゲストログイン（閲覧用）', users_guest_sign_in_path, class: "btn btn-outline-dark btn-lg sign_in", method: :post %>
+      <% else %>
+        <%= link_to 'ゲストログイン（閲覧用）', users_guest_sign_in_path, class: "btn btn-outline-dark btn-lg sign_in disabled", method: :post %>
       <% end %>
     </div>
   </div>
