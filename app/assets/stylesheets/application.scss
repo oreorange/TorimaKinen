@@ -42,3 +42,12 @@ body {
 }
 
 @media screen and (max-width: 768px) { body, html {font-size: 10px; } }
+
+// サンプル画像回転　秒数/最初の傾き角度/回る方向
+.moimg img {
+    transition: 2.0s;
+    transform: rotateZ( 0deg );
+}
+.moimg:hover img {
+    transform: rotateZ( 360deg );
+}
