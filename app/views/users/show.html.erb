@@ -104,6 +104,7 @@
 
             // event クリックで編集、削除
             eventClick : function(event, jsEvent , view) {
+                // submitイベントの本来の動作を止める??
                 jsEvent.preventDefault();
                 $(`#inputScheduleEditForm${event.id}`).modal('show');
             },
