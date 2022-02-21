@@ -4,9 +4,10 @@ class SearchsController < ApplicationController
 	  @content = params[:content]
 	  @method = params[:method]
 	  if @model == 'user'
-	    @records = User.search_for(@content, @method)
+	  	# .page(params[:page]).reverse_order ページ機能実装のため追記
+	    @records = User.search_for(@content, @method).page(params[:page]).reverse_order
 	  else
-	    @records = Event.search_for(@content, @method)
+	    @records = Event.search_for(@content, @method).page(params[:page]).reverse_order
 	  end
 	end
 end

@@ -1,4 +1,4 @@
-<div class=text-right>
+<div class='text-right'>
   <%= render 'search' %>
 </div>
 <% if @model == 'user' %>
@@ -31,3 +31,7 @@
     <% end %>
   </table>
 <% end %>
+<!--kaminari-->
+<div class='mb-5'>
+  <%= paginate @records %>
+</div>

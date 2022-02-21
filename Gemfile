@@ -101,3 +101,6 @@ end
 # gem 'rubocop-rails', require:false
 
 gem 'rails-i18n'
+
+# 検索結果表示画面に使用
+gem 'kaminari', '~> 1.2.1'
