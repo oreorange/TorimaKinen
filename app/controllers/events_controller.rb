@@ -37,8 +37,11 @@ class EventsController < ApplicationController
 
   def destroy
     event = Event.find(params[:id])
+    #イベント投稿ユーザーと現在のユーザーが一致していた場合、削除実行
+    if event.user_id == current_user.id
     event.destroy
     redirect_to user_path(current_user)
+    end
   end
 
   private
