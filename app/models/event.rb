@@ -11,7 +11,7 @@ class Event < ApplicationRecord
   
   validates :title, length: { maximum: 50, minimum: 1}
   validates :start, presence: true
-  validates :end, presence: true
+  # validates :end, presence: true  開始日だけでも大丈夫
 
   # 検索のためのメソッド定義
   def self.search_for(content, method)

@@ -1,5 +1,6 @@
 FactoryBot.define do
   factory :event do
+    start { '2022-03-09' }
     title { Faker::Lorem.characters(number:5) }
     body { Faker::Lorem.characters(number:20) }
   end
